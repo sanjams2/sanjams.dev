@@ -2,20 +2,97 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>sanjams.dev</title>
+		<style>
+			body {
+				max-width: 650px;
+				margin: 40px auto;
+				padding: 0 10px;
+				font-size: 16px;
+				line-height: 1.2;
+				text-align: justify;
+				overflow-wrap: break-word;
+				hyphens: auto;
+			}
+			
+			p {
+				margin: 0.5em 0;
+			}
+			
+			h3, h4 {
+				margin: 1em 0 0.5em 0;
+			}
+			
+			ul {
+				margin: 0.5em 0;
+				padding-left: 2em;
+			}
+			
+			a {
+				color: #0066cc;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				text-decoration: underline;
+			}
+		</style>
 	</head>
 	<body>
 
-	<h1>sanjams.dev</h1>
-	<p>profiles</p>
+	<h3>sanjams.dev</h3>
+    <h4>background</h4>
+    <p>My name is James. My (not so anonymous) pseudonym is sanjams.</p>
+    <p>
+        I like to consider myself an engineer; I'm interested in understanding how things work and solving problems of all shapes and sizes.
+        Today, the form of engineering I mostly practice is software engineering. My focus here has mostly been on backend distributed systems, 
+        but I have dabbled in many other areas of the stack as well (the lower the better!). I tend to work quickly and ask questions later. 
+    </p>
+    <p>
+        I am originally from Atlanta. I have lived in Seattle and now reside in New York City.
+    </p>
+    <p>
+        I studied Industrial Engineering and Computer Science at the Georgia Institute of Technology with a focus in Quality and Statistics and Networking respectively. I graduated in 2017. 
+    </p>
+    <p>
+        I worked at AWS from 2017 to June 2025. Within AWS, I spent the majority of my time (~6 years) working on <a href="https://aws.amazon.com/sagemaker-ai/">AWS SageMaker</a>.
+        I spent about four years on the Inference team primarily focusing on the data-plane of the real-time inference system. Some of my projects included 
+        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture-endpoint.html">Model I/O Capture</a>, 
+        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/async-inference.html">Asynchronous Inference</a>,
+        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/serverless-endpoints.html">Serverless Inference</a>,
+        <a href="https://aws.amazon.com/blogs/machine-learning/elevating-the-generative-ai-experience-introducing-streaming-support-in-amazon-sagemaker-hosting/">Model Response Streaming</a>, and
+        performance optimizations for our services leading to single-digit millisecond latencies. 
+        I then spent about two years on the Training team where I primarily focused on building the HyperPod compute platform. My projects included
+        <a href="https://aws.amazon.com/blogs/aws/introducing-amazon-sagemaker-hyperpod-a-purpose-built-infrastructure-for-distributed-training-at-scale/">Launching HyperPod</a>, 
+        <a href="https://aws.amazon.com/blogs/machine-learning/introducing-amazon-eks-support-in-amazon-sagemaker-hyperpod/">Kubernetes support for HyperPod</a>, and leading infrastructure efforts for 
+        <a href="https://www.aboutamazon.com/news/aws/amazon-nova-artificial-intelligence-bedrock-aws">Nova Model Training</a>.
+        I greatly enjoyed my time at AWS; I am now onto something new...
+    </p>
+    <p>
+        While I have built new things, I generally prefer improving things that already exist.
+    </p>
+	<h4>profiles</h4>
 	<ul>
 		<li><a href="https://github.com/sanjams2">github</a></li>
 		<li><a href="https://twitter.com/james3sanders">twitter</a></li>
 	</ul>
-	<p>projects</p>
+	<h4>projects</h4>
 	<ul>
-		<li><a href="https://govpipe.com">govpipe</a></li>
-		<li><a href="http://libretorrent.com">libretorrent</a></li>
+        <li><a href="https://emfvalidator.com">emf validator</a> - simple website for validating AWS EMF logs directly in your browser</li>
+        <li><a href="https://github.com/sanjams2/sfn-profiler">sfn-profiler</a> - tracing/profiling tools for AWS Step Functions</li>
+        <li><a href="https://github.com/sanjams2/tiny-analytics">tiny-analytics</a> - worlds simplest framework metrics framework; emit metrics from anywhere with no SDK!</li>
+		<li><a href="https://govpipe.com">govpipe</a> - do you like permits? neither do we</li>
+		<li><a href="http://libretorrent.com">libretorrent</a> - goodwill for books</li>
 	</ul>
+    <h4>ideas (free!)</h4>
+    <p>Hoping to eventually move these to the project section above, but feel free to take it on yourself</p>
+    <ul>
+        <li>Distributed Training Visualizer - a visualization tool that takes model code, model config, and infra config and renders how the job would be mapped across accelerators (using WebGPU!)</li>
+        <li>Distributed Training Bandwidth Calculator - a tool for calculating the bandwidth requirements between different accelerators used within a model training run (likely built on top of/with visualizer above)</li>
+        <li>Hierarchical All-Reduce - mostly a learning excercise to build a framework for performing all-reduce in a hierarchical fashion</li>
+        <li>Claude Code Conversation Explorer - a tool (likely within Claude Code itself) which visualizes Claude Code conversations</li>
+        <li>DSAAS - this ones for me</li>
+    </ul>
 	</body>
 </html> 

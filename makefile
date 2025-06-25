@@ -1,5 +1,5 @@
 # Parameters
-AWS_PROFILE := personal
+AWS_PROFILE := prsn
 DOMAIN_NAME := sanjams.dev
 
 # Constants
