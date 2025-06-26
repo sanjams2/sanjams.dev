@@ -11,7 +11,6 @@ AWS_REGION := us-east-1
 local:
 	open site/index.html
 
-export AWS_PROFILE := prsn
 cfn-init:
 	aws --region $(AWS_REGION) cloudformation create-stack \
 		--stack-name $(STACK_NAME) \
@@ -19,7 +18,6 @@ cfn-init:
 		--parameter \
 			ParameterKey="DomainName",ParameterValue=$(DOMAIN_NAME)
 
-export AWS_PROFILE := prsn
 cfn-update:
 	aws --region $(AWS_REGION) cloudformation update-stack \
 		--stack-name $(STACK_NAME) \
@@ -27,13 +25,11 @@ cfn-update:
 		--parameter \
 			ParameterKey="DomainName",ParameterValue=$(DOMAIN_NAME)
 
-export AWS_PROFILE := prsn
 release:
 	aws s3 cp site s3://$(DOMAIN_NAME) \
 		--recursive \
 		--cache-control max-age=86400
 
-export AWS_PROFILE := prsn
 invalidate:
 	aws cloudfront create-invalidation \
 		--distribution-id $(shell aws --region $(AWS_REGION) --profile $(AWS_PROFILE) cloudformation describe-stacks --stack-name $(STACK_NAME) --query "Stacks[0].Outputs[?OutputKey=='CloudfrontDistributionId'].OutputValue" --output text) \
