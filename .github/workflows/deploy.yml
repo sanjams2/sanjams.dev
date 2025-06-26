@@ -9,6 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: aws-env
     
     steps:
       - name: Checkout code
@@ -23,10 +24,6 @@ jobs:
       
       - name: Deploy to S3
         run: make release
-        env:
-          AWS_PROFILE: default
       
       - name: Invalidate CloudFront cache
         run: make invalidate
-        env:
-          AWS_PROFILE: default
