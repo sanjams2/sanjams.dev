@@ -32,5 +32,5 @@ release:
 
 invalidate:
 	aws cloudfront create-invalidation \
-		--distribution-id $(shell aws --region $(AWS_REGION) --profile $(AWS_PROFILE) cloudformation describe-stacks --stack-name $(STACK_NAME) --query "Stacks[0].Outputs[?OutputKey=='CloudfrontDistributionId'].OutputValue" --output text) \
+		--distribution-id $(shell aws --region $(AWS_REGION) cloudformation describe-stacks --stack-name $(STACK_NAME) --query "Stacks[0].Outputs[?OutputKey=='CloudfrontDistributionId'].OutputValue" --output text) \
 		--paths "/*"
