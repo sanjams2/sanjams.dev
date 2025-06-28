@@ -1,2 +1,7 @@
 .envrc
 .zed
+build
+.ropeproject
+
+# Added by cargo
+/target

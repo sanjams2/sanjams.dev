@@ -6,10 +6,7 @@ STACK_NAME := "$(shell echo "sanjams.dev" | tr '.' '-')-website-infra"
 # CloudFront only support certificates in us-east-1
 AWS_REGION := us-east-1
 
-.PHONY: local cfn-init cfn-update release invalidate
-
-local:
-	open site/index.html
+.PHONY: local cfn-init cfn-update release invalidate build
 
 cfn-init:
 	aws --region $(AWS_REGION) cloudformation create-stack \
@@ -25,8 +22,20 @@ cfn-update:
 		--parameter \
 			ParameterKey="DomainName",ParameterValue=$(DOMAIN_NAME)
 
-release:
-	aws s3 cp site s3://$(DOMAIN_NAME) \
+clean:
+	rm -rf target/site
+	cargo clean
+
+build: clean
+	@echo "Building site..."
+	cargo run
+	@echo "Site built successfully."
+
+local: build
+	open target/site/index.html
+
+release: build
+	aws s3 cp target/site s3://$(DOMAIN_NAME) \
 		--recursive \
 		--cache-control max-age=86400
 
