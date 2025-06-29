@@ -1,5 +1,3 @@
-### sanjams.dev
-
 #### background
 
 My name is James. My (not so anonymous) pseudonym is sanjams.
