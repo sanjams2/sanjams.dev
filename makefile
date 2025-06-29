@@ -35,9 +35,10 @@ local: build
 	open target/site/index.html
 
 release: build
-	aws s3 cp target/site s3://$(DOMAIN_NAME) \
-		--recursive \
-		--cache-control max-age=86400
+	aws s3 sync target/site s3://$(DOMAIN_NAME) \
+		--cache-control max-age=86400 \
+		--content-type "text/html" \
+		--no-guess-mime-type
 
 invalidate:
 	aws cloudfront create-invalidation \
