@@ -26,7 +26,7 @@ Hoping to eventually move these to the project section above, but feel free to t
 
 - Distributed Training Visualizer - a visualization tool that takes model code, model config, and infra config and renders how the job would be mapped across accelerators (using WebGPU!)
 - Distributed Training Bandwidth Calculator - a tool for calculating the bandwidth requirements between different accelerators used within a model training run (likely built on top of/with visualizer above)
-- Hierarchical All-Reduce - mostly a learning excercise to build a framework for performing all-reduce in a hierarchical fashion
+- Hierarchical All-Reduce - mostly a learning exercise to build a framework for performing all-reduce in a hierarchical fashion
 - Claude Code Conversation Explorer - a tool (likely within Claude Code itself) which visualizes Claude Code conversations
 - SRE Battle RL Environment - building an RL environment where an agent learning to be an SRE faces off against a ["chaos-monkey"](https://netflix.github.io/chaosmonkey/) agent. Reward criteria roughly based on alarms in OK state.
 - DSAAS - this ones for me...
